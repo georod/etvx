@@ -1,0 +1,170 @@
+/*
+Richard Wen
+wenr@smh.ca
+*/
+
+/* TOP */
+
+.logo {
+	width: 75px;
+	padding: 5px;
+}
+
+.title {
+	letter-spacing: 2px;
+}
+
+.subtitle {
+	margin-bottom: 5px;
+}
+
+.subtitle-text {
+	font-size: 14pt;
+	letter-spacing: 1px;
+}
+
+.nav-item {
+	cursor: pointer;
+}
+
+a {
+	color: #444;
+}
+
+/* SELECT DROPDOWN ARROW */
+
+select {
+	border-radius: 0;
+	margin: 0;      
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+select {
+	background-image:
+		linear-gradient(45deg, transparent 50%, gray 50%),
+		linear-gradient(135deg, gray 50%, transparent 50%);
+	background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px);
+	background-size:
+		5px 5px,
+		5px 5px;
+	background-repeat: no-repeat;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* NO HIGHLIGHT */
+
+input:focus, input:active {
+	box-shadow: none !important;
+}
+
+select:focus, select:active {
+	box-shadow: none !important;
+}
+
+.btn:focus,.btn:active {
+	box-shadow: none !important;
+ }
+
+/* HELP */
+
+#help-icon {
+	vertical-align: super;
+	cursor: pointer;
+	margin-right: -10px;
+}
+
+.modal-body {
+	text-align: left;
+}
+
+/* USER INPUT */
+
+.form-group { /* input container */
+	width: 250px;
+	text-align: center;
+	margin-top: 125px;
+	margin-top: 30vh;
+}
+.input-group { /* input box */
+	width: 50px;
+	padding: 8px;
+}
+
+.form-control { /* input value */
+	border: none !important;
+	border-bottom: 1px solid black !important;
+	border-radius: 0 !important;
+	text-align: center;
+	padding 0;
+}
+
+select { /* input dropdown */
+	text-align-last: center;
+}
+
+#calculate-button {
+	margin-top: 25px;
+	width: 235px;
+	margin-bottom: 25px;
+}
+
+/* USER INPUT: TOOLS */
+
+#recalculate-button {
+	width: 125px;
+}
+
+#zoomreset-button {
+	margin-left: 8px;
+	margin-right: 4px;
+}
+
+#zoomout-button {
+	margin-right: 4px;
+}
+
+#tools{
+	display:none;
+	z-index: 1;
+}
+
+.toolbar {
+	position: fixed;
+	bottom: 0;
+	background-color: white;
+	width: 100%;
+	margin-bottom: 34px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 1px;
+}
+
+/* BOTTOM */
+
+.footer {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	background-color: white;
+	width: 100%;
+}

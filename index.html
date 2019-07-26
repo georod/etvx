@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<!-- HEAD -->
+	<head>
+	
+		<!-- METADATA -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>ETVx, Explore Ecuador</title>
+		<link rel="icon" href="img/etv_logo1.png">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/simplex/bootstrap.min.css">
+		<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">-->
+		<link rel="stylesheet" href="css/d3_tip.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+		<!--Font Awesome Kit -->
+		<script src="https://kit.fontawesome.com/f5447b3278.js"></script>
+		
+	</head>
+
+	<!-- BODY -->
+	<body class="bg-light">
+		
+		<!-- TOP -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+
+			<!-- TOP: LOGO -->
+			<div>
+			<a href="http://www.ecuador-tierra-viva.com/" target=”_blank”><img class="logo" src="img/etv_logo1.png"></a>
+			<a href="http://www.ecuador-tierra-viva.com/" target=”_blank”><img class="logo" src="img/etv_logo2.png"></a>
+			
+			<!-- TOP: TITLE -->
+			<a class="title pl-3 navbar-brand" style="text-align:center">ETVx<small> | Espanol</small></a>
+			</div>
+
+			
+			<!-- TOP: TOGGLE -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- TOP: LINKS -->
+			<div class="collapse navbar-collapse text-center" id="navbarColor03">
+				<ul class="navbar-nav mr-auto">
+
+					<!-- TOP: LINKS: ABOUT-->
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="modal" data-target="#about">About</a>
+					</li>
+
+					<!-- TOP: LINKS: CONTACT -->
+					<li class="nav-item">
+						<a id="contact-link" class="nav-link" data-toggle="modal" data-target="#contact">Contact</a>
+					</li>
+			  	</ul>
+			</div>
+		</nav>
+
+		<!-- TOP: ABOUT -->
+		<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="about-label" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+				<div class="modal-header">
+					<span class="subtitle-text" id="about-label">About</span>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					ETVx (Ecuador Tierra Viva Explorer was developed ...
+				</div>
+				<div class="modal-footer mx-auto"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- TOP: CONTACT -->
+		<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact-label" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				<div class="modal-header">
+					<span class="subtitle-text" id="contact-label">Contact</span>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container"><div class="row">
+						<div class="col-6">
+						<b>Ecuador Tierra Viva</b><br><br>
+						
+						Li Ka Shing Knowledge Institute<br>
+						St. Michael’s Hospital<br>
+						30 Bond Street<br>
+						Toronto, Ontario<br>
+						M5B 1W8<br>
+						Canada<br><br>
+						
+						<i class="fas fa-link"></i> <a href="http://www.cghr.org/" style="color:#212529;">www.cghr.org</a><br>
+						<i class="fas fa-phone"></i> +1 647-916-1287<br>
+						<i class="fas fa-fax"></i> +1 416-864-5256<br>
+						<i class="fas fa-envelope"></i> etvtravelcompany@gmail.com
+						</div>
+						<div id="webmap0" class="col-6" height="600px"></div>
+					</div></div>
+				</div>
+				<div class="modal-footer mx-auto"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		 
+		<!-- USER INPUT 
+		<div class="container">
+			<div class="row justify-content-center">
+				<div id="user-input" class="form-group needs-validation"> 
+
+					<!-- USER INPUT: SUBTITLE 
+					<div id="user-subtitle" class="subtitle">
+						<span class="subtitle-text">Risk of Death</span>
+						<a id="help-icon" data-toggle="modal" data-target="#help"><i class="far fa-question-circle text-muted small" data-toggle="tooltip" data-placement="top" title="Help"></i></a>
+					</div>
+
+					<!-- USER INPUT: HELP 
+					<div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="help-label" aria-hidden="true">
+						<div class="modal-dialog modal-sm" role="document">
+							<div class="modal-content">
+							<div class="modal-header">
+								<span class="subtitle-text" id="help-label">Help</span>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								To calculate your risk of death:<br><br>
+								<ol>
+									<li>Enter your <i>Age</i> in years as a number (e.g. 35)</li>
+									<li>Select your <i>Gender</i> from the dropdown menu</li>
+									<li>Select your <i>Country</i> from the dropdown menu</li>
+									<li>Click the <i>Calculate</i> button</li>
+								</ol>
+								An interactive visual of the risks for different causes of death will be created for you to explore.
+							</div>
+							<div class="modal-footer mx-auto"></div>
+							</div>
+						</div>
+					</div>
+
+					<form id="user-form" class="needs-validation">
+					<!-- USER INPUT: AGE 
+					<div id="user-age" class="input-group">
+						<input class="form-control" min="0" max="100" placeholder="Age" data-toggle="tooltip" data-placement="right" title="Enter your age" type="number" required>
+					</div>
+
+					<!-- USER INPUT: GENDER 
+					<div id="user-gender" class="input-group">
+						<select class="form-control" type="text" data-toggle="tooltip" data-placement="right" title="Select your gender" required>
+							<option selected disabled hidden>Gender</option>
+							<option>Female</option>
+							<option>Male</option>
+						</select>
+					</div>
+
+					<!-- USER INPUT: COUNTRY 
+					<div id="user-country" class="input-group">
+						<select class="form-control" type="text" data-toggle="tooltip" data-placement="right" title="Select your country" required>
+							<option selected disabled hidden>Country</option>
+							<option>United States</option>
+						</select>
+					</div>
+
+					<!-- USER INPUT: CALCULATE 
+					<button id="calculate-button" class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="bottom" title="Calculate your risk of death">Calculate</button>
+					</form>
+				</div>
+
+			</div>
+
+			<!-- USER INPUT: VISUALIZATION 
+			<div id="visualization" class="row" style="margin-top:30px"></div>
+			
+		</div>
+		
+		<!-- USER INPUT: TOOLS 
+		<div class="container">
+			<div class="row justify-content-center">
+				<div id="tools" class="toolbar">
+					<button id="recalculate-button" class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="top" title="Recalculate your risk of death">Recalculate</button>
+					<button id="zoomreset-button" class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="top" title="Reset zoom"><i class="fas fa-undo"></i></button>
+					<button id="zoomout-button" class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="top" title="Zoom out"><i class="fas fa-minus"></i></button>
+					<button id="zoomin-button" class="btn btn-dark" type="submit" data-toggle="tooltip" data-placement="top" title="Zoom in"><i class="fas fa-plus"></i></button>
+				</div>
+			</div>
+		</div>
+	
+		
+		<!-- BOTTOM -->
+		<div class="container">
+			<div class="row justify-content-center" >
+				<footer class="footer">
+					<span class="text-muted">© Copyright 2019 Ecuador Tierra Viva</span>
+				</footer>
+			</div>
+		</div>
+		
+		<!-- WEBMAP -->
+			<div class="container">
+			<div id="webmap" class="col-6" height="700px"></div>
+			<iframe width="100%" height="620" frameborder="0" src="https://etv-explorer.carto.com/builder/70873209-f02c-4522-bcf1-77a886a532ab/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+			</div>
+		</div> 
+		
+		
+
+		<!-- JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+		<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+		<script src="js/defaults.js"></script>
+		<script src="js/mouse.js"></script>
+		<script src="js/svg.js"></script>
+		<script src="js/circles.js"></script>
+		<script src="js/lines.js"></script>
+		<script src="js/text.js"></script> 
+		<script src="js/visualization.js"></script>
+		<script src="js/visualizeRisks.js"></script>
+		<script src="js/index.js"></script> 
+		
+		<!-- Tooltips -->
+		<script>
+			$(function () {
+				$('[data-toggle="tooltip"]').tooltip({
+					trigger : 'hover'
+				})
+			})
+			
+			var webmap = L.map('webmap0');
+			L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
+				attribution: '<small>&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a></small>',
+				subdomains: 'abcd',
+				maxZoom: 19,
+				minZoom: 9
+			}).addTo(webmap);
+			$('#contact-link').click(function(){
+				setTimeout(function(){
+					webmap.setView([43.654591, -79.378217], 16);
+					webmap.invalidateSize();
+				}, 500);
+				
+			});
+			L.circleMarker([43.654591, -79.378217], {color: '#fe0000', fillOpacity: 0.9, fillColor: '#fe0000', radius: 3, weight: 1}).addTo(webmap);
+		</script>
+		
+	</body>
+</html>
