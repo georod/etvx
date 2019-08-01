@@ -204,8 +204,13 @@
 		<!-- WEBMAP -->
 
 			<div class="container-fluid">
+<<<<<<< HEAD
 			<div id="webmap" class="modal-body" height="680px">
 			<iframe width="100%" height="580" frameborder="0" src="https://etv-explorer.carto.com/builder/70873209-f02c-4522-bcf1-77a886a532ab/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+=======
+			<div id="webmap" class="modal-body" height="700px"></div>
+			<iframe width="100%" height="680" frameborder="0" src="https://etv-explorer.carto.com/builder/70873209-f02c-4522-bcf1-77a886a532ab/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+>>>>>>> 797374d455b044d5743a67351f7be7c01b2e7220
 			</div>
 		</div> 
 		
@@ -257,12 +262,12 @@
 			}).addTo(webmap);
 			$('#contact-link').click(function(){
 				setTimeout(function(){
-					webmap.setView([43.654591, -79.378217], 16);
+					webmap.setView([-0.10609, -78.50168], 16);
 					webmap.invalidateSize();
 				}, 500);
 				
 			});
-			L.circleMarker([43.654591, -79.378217], {color: '#fe0000', fillOpacity: 0.9, fillColor: '#fe0000', radius: 3, weight: 1}).addTo(webmap);
+			L.circleMarker([-0.10609, -78.50168]], {color: '#fe0000', fillOpacity: 0.9, fillColor: '#fe0000', radius: 3, weight: 1}).addTo(webmap);
 		</script>
 		
 	</body>
